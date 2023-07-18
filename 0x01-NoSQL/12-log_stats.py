@@ -6,7 +6,7 @@
 if __name__ == "__main__":
     import pymongo
     
-    client = pymongo.MongoClient()
+    client = pymongo.MongoClient('mongodb://127.0.0.1:27017')
     db = client.logs
     collection = db.nginx
     
