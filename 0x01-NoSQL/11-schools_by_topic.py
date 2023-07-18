@@ -5,7 +5,7 @@
 def schools_by_topic(mongo_collection, topic):
     """filter the db collection"""
     filtered_topics = {
-        'topics' : {
+        'topics': {
             '$elemMatch': {
                 '$eq': topic
             }

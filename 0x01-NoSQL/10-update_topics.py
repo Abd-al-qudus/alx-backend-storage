@@ -5,6 +5,6 @@
 def update_topics(mongo_collection, name, topics):
     """update topic based on name"""
     mongo_collection.update_many(
-    {'name': name},
-    {'$set': {'topics': topics}}
+        {'name': name},
+        {'$set': {'topics': topics}}
     )
