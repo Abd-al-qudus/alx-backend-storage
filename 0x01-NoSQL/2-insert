@@ -1,3 +1,2 @@
 // insert into a database in a document
-db_name = $1
-mongo $db_name --eval "db.school.insert({"name": "Holberton school"})"
+db.school.insert({"name": "Holberton school"})
