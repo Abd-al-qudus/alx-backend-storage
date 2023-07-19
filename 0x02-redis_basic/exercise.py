@@ -12,13 +12,14 @@ from typing import (
 class Cache:
     """create a redis instance and cache"""
     def __init__(self) -> None:
+        """initialize the cache class"""
         self._redis: redis.Redis = redis.Redis()
         self._redis.flushdb()
 
     def store(self, data: Union[str, bytes, int, float]) -> str:
         """takes and stores data in redis"""
         key: str = str(uuid.uuid4())
-        self._redis.mset({key: data})
+        self._redis.set(key, data)
         return key
 
     def get(self, key: Union[str, bytes, int], fn: Callable = None) -> Any:
