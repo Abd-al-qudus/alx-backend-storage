@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""a class that defines a redis instance"""
+"""a class that defines a redis instance
+    using a cache database"""
 import redis
 import uuid
 from typing import (
