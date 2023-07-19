@@ -3,11 +3,7 @@
     using a cache database"""
 import redis
 import uuid
-from typing import (
-    Any,
-    Callable,
-    Union
-)
+from typing import Callable, Union
 
 
 class Cache:
@@ -23,7 +19,10 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: Callable = None) -> Union[str, bytes, int, float]:
+    def get(
+            self,
+            key: str,
+            fn: Callable = None) -> Union[str, bytes, int, float]:
         """get data from the redis storage"""
         value = self._redis.get(key)
         if value is None:
